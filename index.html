@@ -16,9 +16,17 @@ border: 1px black solid;
     var ctx=plansza.getContext("2d");
 	document.addEventListener("keydown",sterowanie);
 	
-	ctx.fillStyle = 'black';  // kolor węża
-	ctx.fillRect('225','225','25','25'); // wąż
+	var r=25;  // rozmiar kwadracikow
+	var px=225;
+	var py=225; // pozycje weza
+	var lk=22,3; //liczba kratek 
+	var lp=22,3; // liczba plytek
+	var jx=290;
+	var jy=290; // startowa pozycja jablka
+	var xv=xv=0; //predkosc
 	
+	ctx.fillStyle = 'black';  // kolor węża
+	ctx.fillRect(px,py,r,r); // wąż
 	
 	function sterowanie(klik) {
     switch(klik.keyCode) {
