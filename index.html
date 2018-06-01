@@ -15,32 +15,49 @@ border: 1px black solid;
 	var plansza=document.getElementById("gra");
     var ctx=plansza.getContext("2d");
 	document.addEventListener("keydown",sterowanie);
+	setInterval(gra,1000/15);
 	
 	var r=25;  // rozmiar kwadracikow
 	var px=225;
 	var py=225; // pozycje weza
-	var lk=22,3; //liczba kratek 
-	var lp=22,3; // liczba plytek
 	var jx=290;
 	var jy=290; // startowa pozycja jablka
-	var xv=xv=0; //predkosc
+	var xv=yv=0; //predkosc
+	
+	function gra() {
+	px+=xv;
+	py+=yv;
+	
+	if(px>500) {
+        alert('koniec gry');
+    }
+	if(py>500) {
+        alert('koniec gry');
+    }
+	if(py<0) {
+        alert('koniec gry');
+    }
+	if(py<0) {
+        alert('koniec gry');
+    }
 	
 	ctx.fillStyle = 'black';  // kolor węża
 	ctx.fillRect(px,py,r,r); // wąż
 	
+	}
 	function sterowanie(klik) {
     switch(klik.keyCode) {
         case 37:
-			console.log('asd');
+            xv=-10;yv=0;
             break;
         case 38:
-			console.log('asd');
+            xv=0;yv=-10;
             break;
         case 39:
-			console.log('asd');
+            xv=10;yv=0;
             break;
         case 40:
-			console.log('asd');
+            xv=0;yv=10;
             break;
 		}
 	}
