@@ -42,6 +42,9 @@ border: 1px black solid;
 			alert('koniec gry');
 		}
 	
+	ctx.fillStyle = 'white';
+	ctx.fillRect(0,0,plansza.width,plansza.height);
+	
 	ctx.fillStyle = 'black';  // kolor węża
 	ctx.fillRect(px,py,r,r); // wąż
 	
