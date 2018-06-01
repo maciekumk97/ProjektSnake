@@ -23,28 +23,30 @@ border: 1px black solid;
 	var jx=290;
 	var jy=290; // startowa pozycja jablka
 	var xv=yv=0; //predkosc
-	
+	var slad=[];
+	var ogon = 3; // poczatkowa dlugosc ogona
 	function gra() {
 	px+=xv;
 	py+=yv;
 	
-	if(px>500) {
-        alert('koniec gry');
-    }
-	if(py>500) {
-        alert('koniec gry');
-    }
-	if(py<0) {
-        alert('koniec gry');
-    }
-	if(py<0) {
-        alert('koniec gry');
-    }
+		if(px>500) {
+			alert('koniec gry');
+		}
+		if(py>500) {
+			alert('koniec gry');
+		}
+		if(py<0) {
+			alert('koniec gry');
+		}
+		if(px<0) {
+			alert('koniec gry');
+		}
 	
 	ctx.fillStyle = 'black';  // kolor węża
 	ctx.fillRect(px,py,r,r); // wąż
 	
 	}
+	
 	function sterowanie(klik) {
     switch(klik.keyCode) {
         case 37:
@@ -61,6 +63,7 @@ border: 1px black solid;
             break;
 		}
 	}
+
 </script>
 </body>
 </html>
