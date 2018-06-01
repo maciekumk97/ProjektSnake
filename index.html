@@ -14,8 +14,28 @@ border: 1px black solid;
 <script>
 	var plansza=document.getElementById("gra");
     var ctx=plansza.getContext("2d");
-	ctx.fillRect('225','225','25','25');
+	document.addEventListener("keydown",sterowanie);
 	
+	ctx.fillStyle = 'black';  // kolor węża
+	ctx.fillRect('225','225','25','25'); // wąż
+	
+	
+	function sterowanie(klik) {
+    switch(klik.keyCode) {
+        case 37:
+			console.log('asd');
+            break;
+        case 38:
+			console.log('asd');
+            break;
+        case 39:
+			console.log('asd');
+            break;
+        case 40:
+			console.log('asd');
+            break;
+		}
+	}
 </script>
 </body>
 </html>
