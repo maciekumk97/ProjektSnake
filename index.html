@@ -4,18 +4,25 @@
 canvas {
 border: 1px black solid;
 }
+
 </style>
 </head>
 <body>
 
-<canvas id="gra" width="625" height="625"> </canvas>
 
+<canvas id="gra" width="625" height="625"> 
+
+
+</canvas>
+<p id="wynik"> </p>
 
 <script>
-	var plansza=document.getElementById("gra");
-    var ctx=plansza.getContext("2d");
+	var plansza = document.querySelector("canvas");
+    var ctx = plansza.getContext("2d");
+	var punkty = document.querySelector("p");
 	document.addEventListener("keydown",sterowanie);
 	setInterval(gra,1000/10);
+	
 	
 	var px=10;
 	var py=10; // pozycje weza
@@ -27,6 +34,8 @@ border: 1px black solid;
 	var ogon = 3; // poczatkowa dlugosc ogona
 	var lk=25;
 	var lp=25;  //liczba kratek i plytek 25*25=625
+	var score=0; // punkty na start;
+	
 	function gra() {
 	px+=xv;
 	py+=yv;
@@ -51,6 +60,7 @@ border: 1px black solid;
 			ctx.fillRect(slad[i].x*lk,slad[i].y*lk,lk-2,lk-2); // wąż
 			if(slad[i].x==px && slad[i].y==py) {
 				ogon = 3;
+				score = 0;
 			}
 		}
 		slad.push({x:px,y:py});
@@ -59,16 +69,18 @@ border: 1px black solid;
 		slad.shift();
 		}
 	
-	if(jx==px && jy==py) 
-	{
-		ogon++;
-		jx=Math.floor(Math.random()*lp);
-        jy=Math.floor(Math.random()*lp);
-	}
+		if(jx==px && jy==py) 
+		{	
+			ogon++;
+			score++;
+			jx=Math.floor(Math.random()*lp);
+			jy=Math.floor(Math.random()*lp);
+			
+		}
 	
-	ctx.fillStyle="green";
-    ctx.fillRect(jx*lk,jy*lk,lk-2,lk-2);
-	
+		ctx.fillStyle="green";  // jablko 
+		ctx.fillRect(jx*lk,jy*lk,lk-2,lk-2);
+		punkty.textContent="Punkty: " + score;
 		
 	}
 	
@@ -88,6 +100,8 @@ border: 1px black solid;
             break;
 		}
 	}
+	
+
 </script>
 </body>
 </html>
