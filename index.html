@@ -19,8 +19,8 @@ border: 1px black solid;
 	
 	var px=10;
 	var py=10; // pozycje weza
-	//var jx=290;
-	//var jy=290; // startowa pozycja jablka
+	var jx=20;
+	var jy=20; // startowa pozycja jablka
 	var xv=0;
 	var yv=0; //predkosc
 	var slad=[];
@@ -58,6 +58,18 @@ border: 1px black solid;
 		{
 		slad.shift();
 		}
+	
+	if(jx==px && jy==py) 
+	{
+		ogon++;
+		ax=Math.floor(Math.random()*lp);
+        ay=Math.floor(Math.random()*lp);
+	}
+	
+	ctx.fillStyle="green";
+    ctx.fillRect(jx*lk,jy*lk,lk-2,lk-2);
+	
+		
 	}
 	
 	function sterowanie(klik) {
