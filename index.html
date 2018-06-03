@@ -31,16 +31,16 @@ border: 1px black solid;
 	px+=xv;
 	py+=yv;
 	
-		if(px>=480) {
+		if(px < 0-1) {
 			alert('koniec gry');
 		}
-		if(py>=480) {
+		if(px > lp) {
 			alert('koniec gry');
 		}
-		if(py<=0) {
+		if(py < 0-1) {
 			alert('koniec gry');
 		}
-		if(px<=0) {
+		if(py > lp) {
 			alert('koniec gry');
 		} 
 	ctx.fillStyle = 'white';
@@ -62,8 +62,8 @@ border: 1px black solid;
 	if(jx==px && jy==py) 
 	{
 		ogon++;
-		ax=Math.floor(Math.random()*lp);
-        ay=Math.floor(Math.random()*lp);
+		jx=Math.floor(Math.random()*lp);
+        jy=Math.floor(Math.random()*lp);
 	}
 	
 	ctx.fillStyle="green";
