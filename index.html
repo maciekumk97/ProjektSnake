@@ -22,8 +22,7 @@ margin: 0 auto;
     var ctx = plansza.getContext("2d");
 	var punkty = document.querySelector("p");
 	document.addEventListener("keydown",sterowanie);
-	setInterval(gra,1000/10);
-	
+	//setInterval(gra,1000/10);
 	
 	var px=10;
 	var py=10; // pozycje weza
@@ -37,21 +36,50 @@ margin: 0 auto;
 	var lp=25;  //liczba kratek i plytek 25*25=625
 	var score=0; // punkty na start;
 	
+	function menu() {
+	ctx.fillStyle = 'white';
+	ctx.fillRect(0,0,plansza.width,plansza.height);
+	
+	ctx.fillStyle = 'Green';
+	ctx.font="40px Sylfaen";
+	ctx.fillText("Snake",245,lk+20);
+	
+	ctx.fillStyle = 'red';
+	ctx.font="25px Sylfaen";
+	ctx.fillText("Nacisnij enter, żeby zacząć grać",130,lk+80);
+	
+	ctx.fillStyle = 'blue';
+	ctx.font="20px Sylfaen";
+	ctx.fillText("Żeby zapauzować gre, kliknij spacje",150,lk+150);
+	
+	ctx.fillStyle = 'blue';
+	ctx.font="20px Sylfaen";
+	ctx.fillText("Wybierz poziom trudności: ",180,lk+200);
+	ctx.fillStyle = 'green';
+	ctx.fillText("Kliknij 1: Easy ",220,lk+220);
+	ctx.fillStyle = 'black';
+	ctx.fillText("Kliknij 2: Normal ",220,lk+240);
+	ctx.fillStyle = 'red';
+	ctx.fillText("Kliknij 3: Hard ",220,lk+260);
+	
+	}
+	menu();
+	
 	function gra() {
 	px+=xv;
 	py+=yv;
 	
 		if(px < 0-1) {
-			alert('koniec gry');
+			alert('koniec gry, odśwież przeglądarke');
 		}
 		if(px > lp) {
-			alert('koniec gry');
+			alert('koniec gry, odśwież przeglądarke');
 		}
 		if(py < 0-1) {
-			alert('koniec gry');
+			alert('koniec gry, odśwież przeglądarke');
 		}
 		if(py > lp) {
-			alert('koniec gry');
+			alert('koniec gry, odśwież przeglądarke');
 		} 
 	ctx.fillStyle = 'white';
 	ctx.fillRect(0,0,plansza.width,plansza.height);
@@ -87,6 +115,7 @@ margin: 0 auto;
 		ctx.font="25px arial";
 		ctx.fillText(score_text, 245, lk+20 );
 		
+
 	}
 	
     
@@ -105,7 +134,33 @@ margin: 0 auto;
         case 40:
             xv=0;yv=1;
             break;
+		case 32:
+			alert("pauza");
+			break;
+		case 13:
+			setInterval(gra,1000/x);
+			break;
+		case 49:
+			x=10;
+			menu();
+			ctx.fillStyle = 'green';
+			ctx.fillText("Kliknij 1: Easy - wybrales ",220,lk+220);
+			
+			break;
+		case 50:
+			x=15;
+			menu();
+			ctx.fillStyle = 'black';
+			ctx.fillText("Kliknij 2: Normal - wybrales ",220,lk+240);
+			break;
+		case 51:
+			x=20;
+			menu();
+			ctx.fillStyle = 'red';
+			ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
+			break;	
 		}
+		
 	}
 	
 
