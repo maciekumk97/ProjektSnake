@@ -2,7 +2,8 @@
 <head>
 <style>
 canvas {
-border: 1 black solid;
+border: 1px black solid;
+margin: 0 auto;
 }
 
 </style>
@@ -55,6 +56,7 @@ border: 1 black solid;
 	ctx.fillStyle = 'white';
 	ctx.fillRect(0,0,plansza.width,plansza.height);
 	
+	
 	ctx.fillStyle = 'black';  // kolor węża
 		for(var i=0;i<slad.length;i++) {
 			ctx.fillRect(slad[i].x*lk,slad[i].y*lk,lk-2,lk-2); // wąż
@@ -80,9 +82,14 @@ border: 1 black solid;
 	
 		ctx.fillStyle="green";  // jablko 
 		ctx.fillRect(jx*lk,jy*lk,lk-2,lk-2);
-		punkty.textContent="Punkty: " + score;
+		var score_text = "Punkty: " + score;
+		ctx.fillStyle = 'red';
+		ctx.font="25px arial";
+		ctx.fillText(score_text, 245, lk+20 );
 		
 	}
+	
+    
 	
 	function sterowanie(klik) {
     switch(klik.keyCode) {
