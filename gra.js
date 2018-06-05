@@ -154,20 +154,20 @@
 			setInterval(gra,1000/x);
 			break;
 		case 49:
-			x=10;
+			x=5;
 			menu();
 			ctx.fillStyle = 'green';
 			ctx.fillText("Kliknij 1: Easy - wybrales ",220,lk+220);
 			
 			break;
 		case 50:
-			x=15;
+			x=10;
 			menu();
 			ctx.fillStyle = 'black';
 			ctx.fillText("Kliknij 2: Normal - wybrales ",220,lk+240);
 			break;
 		case 51:
-			x=20;
+			x=15;
 			menu();
 			ctx.fillStyle = 'red';
 			ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
@@ -177,17 +177,17 @@
 			menu();
 			ctx.fillStyle = 'orange';
 			ctx.fillText("Kliknij 4: Normalny - wybrałeś ",220,lk+310);
-				if(x==10)
+			if(x==5)
 				{
 				ctx.fillStyle = 'green';
 				ctx.fillText("Kliknij 1: Easy - wybrales ",220,lk+220);
 				}
-				else if(x==15)
+			else if(x==10)
 				{
 				ctx.fillStyle = 'black';
 				ctx.fillText("Kliknij 2: Normal - wybrales ",220,lk+240);
 				}
-				else if(x==20)
+			else if(x==15)
 				{
 				ctx.fillStyle = 'red';
 				ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
@@ -199,17 +199,17 @@
 			ctx.fillStyle = 'purple';
 			ctx.fillText("Kliknij 5: Torus - wybrałeś ",220,lk+330);
 			
-			if(x==10)
+			if(x==5)
 				{
 				ctx.fillStyle = 'green';
 				ctx.fillText("Kliknij 1: Easy - wybrales ",220,lk+220);
 				}
-				else if(x==15)
+			else if(x==10)
 				{
 				ctx.fillStyle = 'black';
 				ctx.fillText("Kliknij 2: Normal - wybrales ",220,lk+240);
 				}
-				else if(x==20)
+			else if(x==15)
 				{
 				ctx.fillStyle = 'red';
 				ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
