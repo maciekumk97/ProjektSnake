@@ -51,6 +51,10 @@
 	ctx.fillStyle = 'purple';
 	ctx.fillText("Kliknij 5: Torus ",220,lk+330);
 	
+	ctx.fillStyle = 'red';
+	ctx.font="20px Arial";
+	ctx.fillText("Designed by: Maciek Świechowicz",155,lk+580);
+	
 	}
 	menu();
 	
