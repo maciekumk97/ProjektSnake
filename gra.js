@@ -15,6 +15,7 @@
 	let lk=25;
 	let lp=25;  //liczba kratek i plytek 25*25=625
 	let score=0; // punkty na start;
+	let tryb_gry;
 	
 	function menu() {
 	ctx.fillStyle = 'white';
@@ -56,19 +57,38 @@
 	function gra() {
 	px+=xv;
 	py+=yv;
-	
-		if(px < 0-1) {
-			alert('koniec gry, odśwież przeglądarke');
+		
+		if(tryb_gry==0)
+			{
+			if(px < 0-1) {
+				alert('koniec gry, odśwież przeglądarke');
+			}
+			if(px > lp) {
+				alert('koniec gry, odśwież przeglądarke');
+			}
+			if(py < 0-1) {
+				alert('koniec gry, odśwież przeglądarke');
+			}
+			if(py > lp) {
+				alert('koniec gry, odśwież przeglądarke');
+			} 
 		}
-		if(px > lp) {
-			alert('koniec gry, odśwież przeglądarke');
+		else if(tryb_gry==1)
+		{
+			if(px < 0) {
+				px = lp-1;
+			}
+			if(px > lp-1) {
+				px = 0;
+			}
+			if(py < 0) {
+				py = lp-1;
+			}
+			if(py > lp-1) {
+				py = 0;
+			}
 		}
-		if(py < 0-1) {
-			alert('koniec gry, odśwież przeglądarke');
-		}
-		if(py > lp) {
-			alert('koniec gry, odśwież przeglądarke');
-		} 
+		
 	ctx.fillStyle = 'white';
 	ctx.fillRect(0,0,plansza.width,plansza.height);
 	
@@ -148,6 +168,7 @@
 			ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
 			break;	
 		case 52:
+			tryb_gry=0;
 			menu();
 			ctx.fillStyle = 'orange';
 			ctx.fillText("Kliknij 4: Normalny - wybrałeś ",220,lk+310);
@@ -168,6 +189,7 @@
 				}
 			break;	
 		case 53:
+			tryb_gry=1;
 			menu();
 			ctx.fillStyle = 'purple';
 			ctx.fillText("Kliknij 5: Torus - wybrałeś ",220,lk+330);
