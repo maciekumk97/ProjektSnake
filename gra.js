@@ -1,5 +1,5 @@
-	let plansza = document.querySelector("canvas");
-    let ctx = plansza.getContext("2d");
+﻿	const plansza = document.querySelector("canvas");
+    const ctx = plansza.getContext("2d");
 	let punkty = document.querySelector("p");
 	document.addEventListener("keydown",sterowanie);
 	//setInterval(gra,1000/10);
@@ -41,6 +41,14 @@
 	ctx.fillText("Kliknij 2: Normal ",220,lk+240);
 	ctx.fillStyle = 'red';
 	ctx.fillText("Kliknij 3: Hard ",220,lk+260);
+	
+	ctx.fillStyle = 'blue';
+	ctx.font="20px Sylfaen";
+	ctx.fillText("Tryby gry: ",180,lk+290);
+	ctx.fillStyle = 'orange';
+	ctx.fillText("Kliknij 4: Normalny ",220,lk+310);
+	ctx.fillStyle = 'purple';
+	ctx.fillText("Kliknij 5: Torus ",220,lk+330);
 	
 	}
 	menu();
@@ -139,6 +147,47 @@
 			ctx.fillStyle = 'red';
 			ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
 			break;	
+		case 52:
+			menu();
+			ctx.fillStyle = 'orange';
+			ctx.fillText("Kliknij 4: Normalny - wybrałeś ",220,lk+310);
+				if(x==10)
+				{
+				ctx.fillStyle = 'green';
+				ctx.fillText("Kliknij 1: Easy - wybrales ",220,lk+220);
+				}
+				else if(x==15)
+				{
+				ctx.fillStyle = 'black';
+				ctx.fillText("Kliknij 2: Normal - wybrales ",220,lk+240);
+				}
+				else if(x==20)
+				{
+				ctx.fillStyle = 'red';
+				ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
+				}
+			break;	
+		case 53:
+			menu();
+			ctx.fillStyle = 'purple';
+			ctx.fillText("Kliknij 5: Torus - wybrałeś ",220,lk+330);
+			
+			if(x==10)
+				{
+				ctx.fillStyle = 'green';
+				ctx.fillText("Kliknij 1: Easy - wybrales ",220,lk+220);
+				}
+				else if(x==15)
+				{
+				ctx.fillStyle = 'black';
+				ctx.fillText("Kliknij 2: Normal - wybrales ",220,lk+240);
+				}
+				else if(x==20)
+				{
+				ctx.fillStyle = 'red';
+				ctx.fillText("Kliknij 3: Hard - wybrałeś ",220,lk+260);
+				}
+			break;		
 		}
 		
 	}
