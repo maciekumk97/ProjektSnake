@@ -1,6 +1,5 @@
 ﻿	const plansza = document.querySelector("canvas");
     const ctx = plansza.getContext("2d");
-	let punkty = document.querySelector("p");
 	document.addEventListener("keydown",sterowanie);
 	//setInterval(gra,1000/10);
 	
@@ -12,8 +11,8 @@
 	let yv=0; //predkosc
 	let slad=[];
 	let ogon = 3; // poczatkowa dlugosc ogona
-	let lk=25;
-	let lp=25;  //liczba kratek i plytek 25*25=625
+	const lk=25;
+	const lp=25;  //liczba kratek i plytek 25*25=625
 	let score=0; // punkty na start;
 	let tryb_gry;
 	
